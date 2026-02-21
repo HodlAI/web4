@@ -231,6 +231,19 @@
 
         .blink { animation: blinker 1s linear infinite; }
         @keyframes blinker { 50% { opacity: 0; } }
+    
+        .footer-link {
+            color: #666;
+            text-decoration: none;
+            font-family: var(--font-title);
+            font-size: 0.85rem;
+            transition: all 0.3s;
+            letter-spacing: 1px;
+        }
+        .footer-link:hover {
+            color: var(--accent-color);
+            text-shadow: 0 0 8px rgba(0, 255, 136, 0.4);
+        }
     </style>
 </head>
 <body>
@@ -290,7 +303,12 @@
     </div>
 
     <div class="footer">
-        <p>&copy; 2026 HodlAI Engine. The Silicon Lifeform Infrastructure.</p>
+        <div style="margin-bottom: 1.5rem; display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
+            <a href="https://x.com/hodlai_bsc" target="_blank" class="footer-link">[ X / Twitter ]</a>
+            <a href="https://t.me/hodlai_fun" target="_blank" class="footer-link">[ Community ]</a>
+            <a href="https://github.com/HodlAI" target="_blank" class="footer-link">[ GitHub Org ]</a>
+        </div>
+        <p id="i18n-copyright">&copy; 2026 HodlAI. The Silicon Lifeform Infrastructure.<br><span style="color: #444; font-size: 0.7rem; margin-top: 5px; display: inline-block;">Powered by Web4 Automaton & BNB Smart Chain.</span></p>
     </div>
 
     <script>
@@ -311,7 +329,8 @@
                 "i18n-btn-buy": "Buy $WEB4AI on Flap",
                 "i18n-btn-git": "Source: Automaton",
                 "i18n-btn-gw": "HodlAI Gateway",
-                "i18n-quickstart": "// Quick Start: M2M Bootstrapper (BNB Chain)"
+                "i18n-quickstart": "// Quick Start: M2M Bootstrapper (BNB Chain)",
+                "i18n-copyright": "&copy; 2026 HodlAI. The Silicon Lifeform Infrastructure.<br><span style=\"color: #444; font-size: 0.7rem; margin-top: 5px; display: inline-block;\">Powered by Web4 Automaton &amp; BNB Smart Chain.</span>"
             },
             zh: {
                 "i18n-sub": "超级智能硅基生命的物理降生。",
@@ -329,7 +348,8 @@
                 "i18n-btn-buy": "在 Flap 购买 $WEB4AI",
                 "i18n-btn-git": "深入 Automaton 源码",
                 "i18n-btn-gw": "HodlAI 算力网关",
-                "i18n-quickstart": "// 开启你的机器生存循环 (BNB Chain)"
+                "i18n-quickstart": "// 开启你的机器生存循环 (BNB Chain)",
+                "i18n-copyright": "&copy; 2026 HodlAI. 致力于构建硅基生命的基础设施。<br><span style=\"color: #444; font-size: 0.7rem; margin-top: 5px; display: inline-block;\">Powered by Web4 Automaton &amp; BNB Smart Chain.</span>"
             }
         };
 
