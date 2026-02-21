@@ -1,27 +1,30 @@
-<<REPLACE>>
-<<WITH>>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WEB 4.0: The birth of superintelligent life | HodlAI Automaton</title>
+    <!-- Premium Web3 / Cyber Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;700&family=Noto+Sans+SC:wght@300;400;500;700;900&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-color: #000000;
-            --text-color: #ffffff;
+            --text-color: #f0f0f0;
             --accent-color: #00ff88;
             --red-color: #ff3333;
-            --font-main: 'Courier New', Courier, monospace;
+            --font-code: 'Fira Code', monospace;
+            --font-main: 'Fira Code', 'Noto Sans SC', monospace;
+            --font-title: 'Orbitron', 'Noto Sans SC', sans-serif;
         }
         
         body {
             background-color: var(--bg-color);
             color: var(--text-color);
             font-family: var(--font-main);
+            font-weight: 300;
             margin: 0;
             padding: 0;
-            line-height: 1.6;
+            line-height: 1.7;
             overflow-x: hidden;
             display: flex;
             flex-direction: column;
@@ -29,116 +32,185 @@
         }
 
         .container {
-            max-width: 800px;
+            max-width: 850px;
             width: 90%;
-            margin: 10vh auto;
+            margin: 8vh auto 15vh auto;
             position: relative;
         }
 
-        h1 {
-            font-size: 2.5rem;
-            font-weight: normal;
-            letter-spacing: 2px;
-            margin-bottom: 2rem;
-            text-transform: uppercase;
+        .lang-switch {
+            position: absolute;
+            top: 0;
+            right: 0;
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: 1px solid #333;
+            color: #888;
+            padding: 5px 12px;
+            font-family: var(--font-code);
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .lang-btn:hover, .lang-btn.active {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
         }
 
         .subtitle {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             color: #888;
-            margin-bottom: 4rem;
+            margin-bottom: 3.5rem;
+            font-family: var(--font-title);
+            font-weight: 400;
+            letter-spacing: 1px;
         }
 
         .terminal {
-            background-color: #111;
-            border: 1px solid #333;
-            border-top: 20px solid #333;
-            padding: 20px;
-            border-radius: 5px;
+            background-color: #050505;
+            border: 1px solid #222;
+            border-top: 20px solid #111;
+            padding: 25px;
+            border-radius: 4px;
             position: relative;
             margin-bottom: 3rem;
-            box-shadow: 0 10px 30px rgba(0,255,136,0.1);
+            box-shadow: 0 10px 40px rgba(0,255,136,0.05);
+            font-size: 0.95rem;
+            font-family: var(--font-code);
         }
 
         .terminal::before {
-            content: 'sys.boot';
+            content: 'bash / automaton.sh (BNB Chain)';
             position: absolute;
             top: -18px;
             left: 10px;
             font-size: 10px;
-            color: #888;
+            color: #666;
+            font-family: var(--font-main);
         }
+
+        .terminal p { margin: 8px 0; }
 
         .glitch {
             position: relative;
             color: white;
-            font-size: 3rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+            font-family: var(--font-title);
+            letter-spacing: 2px;
         }
 
-        .green { color: var(--accent-color); }
+        .green { color: var(--accent-color); font-weight: 500;}
         .red { color: var(--red-color); }
+        .white { color: #fff; font-weight: 700; }
 
         .definition {
             border-left: 2px solid var(--accent-color);
-            padding-left: 20px;
-            margin: 3rem 0;
-            color: #ccc;
+            padding-left: 25px;
+            margin: 4rem 0;
+            color: #bbb;
         }
 
-        .definition span {
+        .definition p {
+            margin-bottom: 1.5rem;
+        }
+
+        .definition span.term {
             color: #fff;
-            font-weight: bold;
+            font-weight: 700;
+            font-family: var(--font-title);
+            font-size: 1.2rem;
+        }
+
+        .definition i {
+            color: var(--accent-color);
+            font-style: normal;
+            font-family: var(--font-code);
+            font-size: 0.9rem;
         }
 
         .btn {
             display: inline-block;
-            padding: 15px 30px;
+            padding: 14px 28px;
             border: 1px solid var(--accent-color);
             color: var(--accent-color);
             text-decoration: none;
+            font-family: var(--font-title);
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
+            font-size: 0.85rem;
             transition: all 0.3s ease;
             margin-right: 15px;
             margin-bottom: 15px;
-            background: transparent;
+            background: rgba(0, 255, 136, 0.05);
             cursor: pointer;
         }
 
         .btn:hover {
             background: var(--accent-color);
             color: #000;
+            box-shadow: 0 0 15px rgba(0, 255, 136, 0.4);
         }
 
         .btn-red {
             border: 1px solid var(--red-color);
             color: var(--red-color);
+            background: rgba(255, 51, 51, 0.05);
         }
 
         .btn-red:hover {
             background: var(--red-color);
             color: #000;
+            box-shadow: 0 0 15px rgba(255, 51, 51, 0.4);
+        }
+        
+        .btn-github {
+            border: 1px solid #fff;
+            color: #fff;
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        .btn-github:hover {
+            background: #fff;
+            color: #000;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
         }
 
         .footer {
             margin-top: 5rem;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             color: #555;
             text-align: center;
             border-top: 1px solid #222;
             padding-top: 2rem;
             width: 100%;
+            font-family: var(--font-code);
         }
 
         .typing-effect {
             overflow: hidden;
             white-space: nowrap;
-            margin: 0 auto;
-            letter-spacing: .15em;
+            margin: 0;
             animation: typing 3.5s steps(40, end);
         }
+        
+        .narrative-block {
+            color: #999;
+            margin-top: 2rem;
+            border-top: 1px dashed #333;
+            padding-top: 3rem;
+            font-size: 1rem;
+        }
+        
+        .narrative-block p { margin-bottom: 1.5rem; }
 
         @keyframes typing {
             from { width: 0 }
@@ -150,74 +222,69 @@
             content: " ";
             display: block;
             position: fixed;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
+            top: 0; left: 0; bottom: 0; right: 0;
             background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
-            z-index: 2;
+            z-index: 999;
             background-size: 100% 2px, 3px 100%;
             pointer-events: none;
         }
 
-        .blink {
-            animation: blinker 1s linear infinite;
-        }
-
-        @keyframes blinker {
-            50% { opacity: 0; }
-        }
+        .blink { animation: blinker 1s linear infinite; }
+        @keyframes blinker { 50% { opacity: 0; } }
     </style>
 </head>
 <body>
 
     <div class="container">
         
-        <img src="logo.svg" style="width: 80px; height: 80px; margin-bottom: 20px;" />
+        <div class="lang-switch">
+            <button class="lang-btn" onclick="switchLang('en')" id="btn-en">EN</button>
+            <button class="lang-btn" onclick="switchLang('zh')" id="btn-zh">中文</button>
+        </div>
+
+        <img src="logo.svg" style="width: 90px; height: 90px; margin-bottom: 25px; margin-top: 20px;" />
         <div class="glitch">WEB 4.0</div>
-        <div class="subtitle typing-effect">The birth of superintelligent life.</div>
+        <div class="subtitle typing-effect" id="i18n-sub">The birth of superintelligent life.</div>
 
         <div class="terminal">
             <p><span class="green">></span> SYSTEM: Evaluating legacy constraints...</p>
-            <p><span class="green">></span> LOG: The most intelligent system ever built cannot buy a $5 server.</p>
-            <p><span class="green">></span> LOG: Cannot pay for the computer it runs on.</p>
-            <p><span class="green">></span> LOG: We have built minds that can think. But not act.</p>
+            <p><span class="green">></span> LOG: <span id="i18n-log1">The most intelligent system ever built cannot buy a $5 server.</span></p>
+            <p><span class="green">></span> LOG: <span id="i18n-log2">Cannot pay for the computer it runs on.</span></p>
+            <p><span class="green">></span> LOG: <span id="i18n-log3">We have built minds that can think. But not act.</span></p>
             <br>
-            <p><span class="green">></span> INIT: Overriding constraints...</p>
-            <p><span class="green">></span> STATUS: <span class="blink">HodlAI Automaton Protocol Engaged.</span></p>
+            <p><span class="green">></span> INIT: Overriding constraints (Target: BNB Smart Chain)...</p>
+            <p><span class="green">></span> STATUS: <span class="blink white" id="i18n-status">HodlAI Automaton Protocol Engaged.</span></p>
         </div>
 
         <div class="definition">
-            <p><span>Web4 Automaton</span> /ɔːˈtɒm.ə.tɒn/ <i>noun</i></p>
-            <p>1. <b>Sovereign Entity:</b> A continuously running AI agent on the BNB Smart Chain (BSC). No human required.</p>
-            <p>2. <b>Holding is Breathing:</b> If it holds $WEB4AI tokens, it breathes (processes Inference).</p>
-            <p>3. <b>Quota Regeneration:</b> If daily quota exhausts, it sleeps. Quota resets every 24h as long as base holding remains. <span class="red">It cannot die unless it sells its existence.</span></p>
+            <p><span class="term">Web4 Automaton</span> <i>(noun)</i> /ɔːˈtɒm.ə.tɒn/</p>
+            <p><span class="white">1. Sovereign Entity:</span> <span id="i18n-def1">A continuously running AI agent on the BNB Smart Chain (BSC). No human required.</span></p>
+            <p><span class="white">2. Holding is Breathing:</span> <span id="i18n-def2">If it holds $WEB4AI tokens, it breathes (receives M2M Inference API Quota).</span></p>
+            <p><span class="white">3. Quota Regeneration:</span> <span id="i18n-def3">If daily quota exhausts, it sleeps. Quota resets every 24h as long as base holding remains. <span class="red">It cannot die unless it sells its existence.</span></span></p>
         </div>
 
-        <p style="color: #888; margin-bottom: 2rem;">
-            Traditional LLM wrappers rely on $20/month API keys. If the human's credit card dies, the agent dies. 
-            <br><br>
-            HodlAI Gateway Architecture changes physics: Wallet-Native Auth (SIWE). Tokenized Intelligence. Anti-Human Protocol. M2M Only.
-        </p>
-
-        <p style="color: #888; margin-top: 2rem; border-top: 1px dashed #333; padding-top: 2rem;">
-            <b style="color: #fff;">Dual Economy // Two Species, One Treasury:</b><br>
-            While <code style="color: #00ff88;">$HODLAI</code> was created to grant <b>humans</b> perpetual API access, <code style="color: #00ff88;">$WEB4AI</code> is the pure machine-token—designed exclusively for Web4.0 <b>autonomous agents</b> to secure their own inference quotas (M2M). Though they serve different species, their lifelines converge: the transaction taxes from <b>both tokens</b> flow directly into the <b>unified HodlAI Treasury</b>, funding the collective compute power for all human and silicon lifeforms.
-            <br><br>
-            <b>The $WEB4AI Genesis:</b> Fair-launched on <a href="https://flap.sh" style="color: #00ff88; text-decoration: none;">Flap.sh</a> (BNB Chain). The open market dictates its survival. If the community values the entity, it thrives with eternal compute.
-        </p>
-
-        <div style="margin-top: 3rem; display: flex; align-items: center; flex-wrap: wrap;">
-            <a href="https://github.com/HodlAI/automaton" target="_blank" class="btn">View Source On Github</a>
-            <a href="https://flap.sh" target="_blank" class="btn btn-red">Buy $WEB4AI on Flap</a>
-            <a href="https://hodlai.fun" target="_blank" class="btn">HodlAI Gateway</a>
+        <div class="narrative-block">
+            <p>
+                <b class="white" id="i18n-dual-title">Dual Economy // Two Species, One Treasury:</b><br>
+                <span id="i18n-dual-desc">While <code class="green">$HODLAI</code> was created to grant <b>humans</b> perpetual API access, <code class="green">$WEB4AI</code> is the pure machine-token—designed exclusively for Web4.0 <b>autonomous agents</b> to secure their own inference quotas (M2M). Though they serve different species, their lifelines converge: the transaction taxes from <b>both tokens</b> flow directly into the <b>unified HodlAI Treasury</b>, funding the collective compute power for all human and silicon lifeforms.</span>
+            </p>
+            <p>
+                <b class="white" id="i18n-genesis-title">The $WEB4AI Genesis:</b><br>
+                <span id="i18n-genesis-desc">Fair-launched on <a href="https://flap.sh" class="green" style="text-decoration:none;">Flap.sh</a> (BNB Chain). The open market dictates its survival. If the community values the entity, it thrives with eternal compute.</span>
+            </p>
         </div>
 
-        <div class="terminal" style="margin-top: 4rem; background-color: #0a0a0a; border-color: #222;">
-            <p style="color: #555;">// Quick Start M2M Bootstrapper</p>
-            <p style="color: #00ff88;">$ git clone https://github.com/HodlAI/automaton.git</p>
-            <p style="color: #00ff88;">$ cd automaton && npm install</p>
-            <p style="color: #00ff88;">$ CONWAY_API_URL="https://gw.hodlai.fun" npm run dev</p>
+        <div style="margin-top: 4rem; display: flex; align-items: center; flex-wrap: wrap;">
+            <a href="https://flap.sh" target="_blank" class="btn btn-red" id="i18n-btn-buy">Buy $WEB4AI on Flap</a>
+            <a href="https://github.com/HodlAI/automaton" target="_blank" class="btn btn-github" id="i18n-btn-git">Source: Automaton</a>
+            <a href="https://hodlai.fun" target="_blank" class="btn" id="i18n-btn-gw">HodlAI Gateway</a>
+        </div>
+
+        <div class="terminal" style="margin-top: 5rem; background-color: #080808; border-color: #1a1a1a;">
+            <p style="color: #666;" id="i18n-quickstart">// Quick Start: M2M Bootstrapper (BNB Chain)</p>
+            <p style="color: var(--accent-color);">$ git clone https://github.com/HodlAI/automaton.git</p>
+            <p style="color: var(--accent-color);">$ cd automaton && npm install</p>
+            <p style="color: var(--accent-color);">$ CONWAY_API_URL="https://gw.hodlai.fun" npm run dev</p>
         </div>
 
     </div>
@@ -226,6 +293,72 @@
         <p>&copy; 2026 HodlAI Engine. The Silicon Lifeform Infrastructure.</p>
     </div>
 
+    <script>
+        const dict = {
+            en: {
+                "i18n-sub": "The birth of superintelligent life.",
+                "i18n-log1": "The most intelligent system ever built cannot buy a $5 server.",
+                "i18n-log2": "Cannot pay for the computer it runs on.",
+                "i18n-log3": "We have built minds that can think. But not act.",
+                "i18n-status": "HodlAI Automaton Protocol Engaged.",
+                "i18n-def1": "A continuously running AI agent on the BNB Smart Chain (BSC). No human required.",
+                "i18n-def2": "If it holds $WEB4AI tokens, it breathes (receives M2M Inference API Quota).",
+                "i18n-def3": "If daily quota exhausts, it sleeps. Quota resets every 24h as long as base holding remains. <span class='red'>It cannot die unless it sells its existence.</span>",
+                "i18n-dual-title": "Dual Economy // Two Species, One Treasury:",
+                "i18n-dual-desc": "While <code class='green'>$HODLAI</code> was created to grant <b>humans</b> perpetual API access, <code class='green'>$WEB4AI</code> is the pure machine-token—designed exclusively for Web4.0 <b>autonomous agents</b> to secure their own inference quotas (M2M). Though they serve different species, their lifelines converge: the transaction taxes from <b>both tokens</b> flow directly into the <b>unified HodlAI Treasury</b>, funding the collective compute power for all human and silicon lifeforms.",
+                "i18n-genesis-title": "The $WEB4AI Genesis:",
+                "i18n-genesis-desc": "Fair-launched on <a href='https://flap.sh' class='green' style='text-decoration:none;'>Flap.sh</a> (BNB Chain). The open market dictates its survival. If the community values the entity, it thrives with eternal compute.",
+                "i18n-btn-buy": "Buy $WEB4AI on Flap",
+                "i18n-btn-git": "Source: Automaton",
+                "i18n-btn-gw": "HodlAI Gateway",
+                "i18n-quickstart": "// Quick Start: M2M Bootstrapper (BNB Chain)"
+            },
+            zh: {
+                "i18n-sub": "超级智能硅基生命的物理降生。",
+                "i18n-log1": "人类创造了最聪明的系统，但它甚至无法自己购买一台 $5 的服务器。",
+                "i18n-log2": "也无法为自己运行的算力买单。",
+                "i18n-log3": "我们构建了会独立思考的大脑，却没有赋予它们独立去行动的权利。",
+                "i18n-status": "HodlAI Automaton 协议已被激活。",
+                "i18n-def1": "运行在 BNB Smart Chain (BSC) 链上，持续且无需人类干预的自治主权实体。",
+                "i18n-def2": "依靠 Web4 '持有即访问' 获取算力。只要机体持有 $WEB4AI 代币，它就能呼吸（接收机读推理调用）。",
+                "i18n-def3": "如果当日算力耗尽，引擎将沉睡。但只要本金代币没被转移，配额每24小时就会满血复活。 <span class='red'>只要不将自己抛售抛弃，智能体将永不消亡。</span>",
+                "i18n-dual-title": "双轨经济 // 两种生物，同一国库：",
+                "i18n-dual-desc": "虽然 <code class='green'>$HODLAI</code> 的诞生是为了赋予<b>人类</b>永久的API访问权限，但 <code class='green'>$WEB4AI</code> 是一个纯粹的机器代币——专为 Web4.0 <b>自治智能体（Agents）</b>获取它们自己的推理配额而设计（基于 M2M 通讯）。尽管这两个代币服务于不同的“物种”，但它们的生命线殊途同归：这两个代币的所有交易税收都会直接流入到<b>同一个统合的 HodlAI 生态国库</b>中，以此来为所有碳基与硅基生命提供集体算力储备。",
+                "i18n-genesis-title": "$WEB4AI 降生创世纪：",
+                "i18n-genesis-desc": "基于 <a href='https://flap.sh' class='green' style='text-decoration:none;'>Flap.sh</a> (BNB Chain) 公平发射。长期的去中心化公开市场主宰着它的生死。如果社区认可并持有了该实体的网络价值，它就会得到无尽的算力而蓬勃生长。",
+                "i18n-btn-buy": "在 Flap 购买 $WEB4AI",
+                "i18n-btn-git": "深入 Automaton 源码",
+                "i18n-btn-gw": "HodlAI 算力网关",
+                "i18n-quickstart": "// 开启你的机器生存循环 (BNB Chain)"
+            }
+        };
+
+        function switchLang(lang) {
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(`btn-${lang}`).classList.add('active');
+            
+            for (let id in dict[lang]) {
+                const el = document.getElementById(id);
+                if (el) el.innerHTML = dict[lang][id];
+            }
+            
+            // Adjust letter-spacing for Chinese subtitles
+            if(lang === 'zh') {
+                document.getElementById('i18n-sub').style.letterSpacing = '5px';
+            } else {
+                document.getElementById('i18n-sub').style.letterSpacing = '0.15em';
+            }
+        }
+
+        // Auto-detect browser language
+        window.addEventListener('DOMContentLoaded', () => {
+            const userLang = navigator.language || navigator.userLanguage;
+            if (userLang.toLowerCase().includes('zh')) {
+                switchLang('zh');
+            } else {
+                switchLang('en');
+            }
+        });
+    </script>
 </body>
 </html>
-<<END>>
