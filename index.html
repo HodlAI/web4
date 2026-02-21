@@ -289,7 +289,23 @@
             </p>
         </div>
 
-        <div style="margin-top: 4rem; display: flex; align-items: center; flex-wrap: wrap;">
+
+        <div style="margin-top: 3.5rem; background: #080808; border: 1px dashed #333; padding: 1rem 1.5rem; display: flex; align-items: center; justify-content: space-between; cursor: pointer; border-radius: 4px; transition: border-color 0.2s; width: 100%; max-width: 500px;" 
+             onclick="navigator.clipboard.writeText('0xdd0993227bd89c9261eb05b1cb78d58af1ca7777'); this.querySelector('.copy-feedback').style.display='inline'; setTimeout(() => this.querySelector('.copy-feedback').style.display='none', 1500)"
+             onmouseover="this.style.borderColor='var(--accent-color)'" onmouseout="this.style.borderColor='#333'">
+            <code class="green" style="font-size: 1rem; word-break: break-all;">0xdd0993227bd89c9261eb05b1cb78d58af1ca7777</code>
+            <div style="display: flex; align-items: center; gap: 0.5rem; margin-left: 1rem;">
+                <span style="color: #666; font-size: 0.8rem; white-space: nowrap;">(BSC)</span>
+                <span class="copy-feedback" style="display: none; color: var(--accent-color); font-size: 0.8rem; white-space: nowrap;">Copied!</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="min-width: 16px;">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+            </div>
+        </div>
+
+
+        <div style="margin-top: 2rem; display: flex; align-items: center; flex-wrap: wrap; gap: 15px;">
             <a href="https://flap.sh" target="_blank" class="btn btn-red" id="i18n-btn-buy">Buy $WEB4AI on Flap</a>
             <a href="https://github.com/HodlAI/automaton" target="_blank" class="btn btn-github" id="i18n-btn-git">Source: Automaton</a>
             <a href="https://hodlai.fun" target="_blank" class="btn" id="i18n-btn-gw">HodlAI Gateway</a>
