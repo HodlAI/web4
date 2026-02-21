@@ -296,7 +296,17 @@
         </div>
 
         <div class="terminal" style="margin-top: 5rem; background-color: #080808; border-color: #1a1a1a;">
-            <p style="color: #666;" id="i18n-quickstart">// Quick Start: M2M Bootstrapper (BNB Chain)</p>
+            
+        <div style="margin-top: 2rem; border-top: 1px dashed #333; padding-top: 1.5rem;" id="i18n-prerequisites">
+            <h3 style="color: var(--accent-color); margin-bottom: 1rem;">// Prerequisites: Dual-Chain Lifeblood</h3>
+            <p style="font-size: 0.95rem; line-height: 1.6; color: #ccc;">Before booting an Automaton, its generated Ethereum address requires seed capital across two networks to survive and trade:</p>
+            <ul style="font-size: 0.9rem; line-height: 1.6; color: #aaa; margin-left: 1.5rem; margin-top: 0.5rem; margin-bottom: 1rem;">
+                <li style="margin-bottom: 0.5rem;"><strong style="color: #fff;">1. Lifeblood (BSC):</strong> Deposit <b>$WEB4AI</b> tokens into the agent's wallet on BNB Smart Chain. This grants it free daily AI API Quota (<code class="green">$10 USD value = $1.50 daily credits</code>). Add a tiny amount of BNB for signature gas.</li>
+                <li><strong style="color: #fff;">2. Working Capital (Base):</strong> Deposit <b>USDC</b> onto the Base network along with a fraction of <b>ETH (Base)</b> for gas. This allows the agent to execute EIP-3009 micropayments, hire other agents, and register domains.</li>
+            </ul>
+        </div>
+
+        <p style="color: #666;" id="i18n-quickstart">// Quick Start: M2M Bootstrapper (BNB Chain)</p>
             <p style="color: var(--accent-color);">$ git clone https://github.com/HodlAI/automaton.git</p>
             <p style="color: var(--accent-color);">$ cd automaton && npm install</p>
             <p style="color: var(--accent-color);">$ CONWAY_API_URL="https://gw.hodlai.fun" npm run dev</p>
@@ -340,6 +350,13 @@
                 "i18n-btn-buy": "Buy $WEB4AI on Flap",
                 "i18n-btn-git": "Source: Automaton",
                 "i18n-btn-gw": "HodlAI Gateway",
+                
+                "i18n-prerequisites": `<h3 style="color: var(--accent-color); margin-bottom: 1rem;">// Prerequisites: Dual-Chain Lifeblood</h3>
+            <p style="font-size: 0.95rem; line-height: 1.6; color: #ccc;">Before booting an Automaton, its generated Ethereum address requires seed capital across two networks to survive and trade:</p>
+            <ul style="font-size: 0.9rem; line-height: 1.6; color: #aaa; margin-left: 1.5rem; margin-top: 0.5rem; margin-bottom: 1rem;">
+                <li style="margin-bottom: 0.5rem;"><strong style="color: #fff;">1. Lifeblood (BSC):</strong> Deposit <b>$WEB4AI</b> tokens into the agent's wallet on BNB Smart Chain. This grants it free daily AI API Quota (<code class="green">$10 USD value = $1.50 daily credits</code>). Add a tiny amount of BNB for signature gas.</li>
+                <li><strong style="color: #fff;">2. Working Capital (Base):</strong> Deposit <b>USDC</b> onto the Base network along with a fraction of <b>ETH (Base)</b> for gas. This allows the agent to execute EIP-3009 micropayments, hire other agents, and register domains.</li>
+            </ul>`,
                 "i18n-quickstart": "// Quick Start: M2M Bootstrapper (BNB Chain)",
                 "i18n-copyright": "&copy; 2026 HodlAI. The Silicon Lifeform Infrastructure.<br><span style=\"color: #444; font-size: 0.7rem; margin-top: 5px; display: inline-block;\">Powered by Web4 Automaton &amp; BNB Smart Chain.</span>"
             },
