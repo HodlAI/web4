@@ -23,13 +23,13 @@
     <line x1="30" y1="52" x2="70" y2="52" stroke="#00ff88" stroke-width="1" opacity="0.6"/>
     
     <!-- '4.0' Typographic Layer (Size reduced to perfectly nested proportions) -->
-    <text x="46" y="74" font-family="'Inter', 'Helvetica Neue', sans-serif" font-weight="900" font-size="20" fill="url(#neon)" text-anchor="end">4</text>
-    <text x="54" y="74" font-family="'Inter', 'Helvetica Neue', sans-serif" font-weight="900" font-size="20" fill="url(#neon)" text-anchor="start">0</text>
+    <text x="48" y="70" font-family="'Inter', 'Helvetica Neue', sans-serif" font-weight="900" font-size="14" fill="url(#neon)" text-anchor="end">4</text>
+    <text x="52" y="70" font-family="'Inter', 'Helvetica Neue', sans-serif" font-weight="900" font-size="14" fill="url(#neon)" text-anchor="start">0</text>
   </g>
 
   <!-- The "Breathing Decimal": Serves as both the '.' in 4.0 and the AI's heartbeat -->
-  <circle cx="50" cy="72" r="2" fill="#ffffff" filter="url(#glow)">
+  <circle cx="50" cy="68" r="1.5" fill="#ffffff" filter="url(#glow)">
     <animate attributeName="opacity" values="0.1;1;0.1" dur="2.5s" repeatCount="indefinite" />
-    <animate attributeName="r" values="1.5;2.5;1.5" dur="2.5s" repeatCount="indefinite" />
+    <animate attributeName="r" values="1;2;1" dur="2.5s" repeatCount="indefinite" />
   </circle>
 </svg>
