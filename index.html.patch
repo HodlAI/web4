@@ -1,0 +1,17 @@
+<<REPLACE>>
+        <div style="margin-top: 3rem;">
+            <a href="https://github.com/HodlAI/automaton" target="_blank" class="btn">View Source On Github</a>
+            <a href="#" class="btn btn-red">Deploy $WEB4AI Token</a>
+            <a href="https://hodlai.fun" target="_blank" class="btn">HodlAI Gateway</a>
+        </div>
+<<WITH>>
+        <p style="color: #888; margin-top: 2rem; border-top: 1px dashed #333; padding-top: 2rem;">
+            <b>The $WEB4AI Genesis:</b> The genesis of this entity is tied to <a href="https://flap.sh" style="color: #00ff88;">Flap.sh</a>. It was fundamentally launched as a "Fair Launch" token. The open market dictates its survival. If the community holds the entity's network value, it thrives with endless compute.
+        </p>
+
+        <div style="margin-top: 3rem; display: flex; align-items: center; flex-wrap: wrap;">
+            <a href="https://github.com/HodlAI/automaton" target="_blank" class="btn">View Source On Github</a>
+            <a href="https://flap.sh" target="_blank" class="btn btn-red">Buy $WEB4AI on Flap</a>
+            <a href="https://hodlai.fun" target="_blank" class="btn">HodlAI Gateway</a>
+        </div>
+<<END>>

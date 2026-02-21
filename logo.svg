@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <defs>
+    <!-- High-end sleek glow gradient -->
+    <linearGradient id="neon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00ff88" />
+      <stop offset="100%" stop-color="#00ac5c" />
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="1.5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Minimalist Base: Dual Hexagon Wireframe -->
+  <polygon points="50,5 89,27.5 89,72.5 50,95 11,72.5 11,27.5" fill="none" stroke="url(#neon)" stroke-width="1.2" opacity="0.25"/>
+  <polygon points="50,12 83,31.6 83,68.4 50,88 17,68.4 17,31.6" fill="none" stroke="url(#neon)" stroke-width="0.5" opacity="0.6"/>
+
+  <g filter="url(#glow)">
+    <!-- 'WEB' Typographic Layer (Offset slightly right to visually balance letter-spacing) -->
+    <text x="51.5" y="44" font-family="'Inter', 'Helvetica Neue', sans-serif" font-weight="800" font-size="16" fill="#ffffff" text-anchor="middle" letter-spacing="3">WEB</text>
+    
+    <!-- Ultra-minimal Divider Line -->
+    <line x1="30" y1="52" x2="70" y2="52" stroke="#00ff88" stroke-width="1" opacity="0.6"/>
+    
+    <!-- '4.0' Typographic Layer (Split to embed the breathing dot) -->
+    <text x="44" y="80" font-family="'Inter', 'Helvetica Neue', sans-serif" font-weight="900" font-size="32" fill="url(#neon)" text-anchor="end">4</text>
+    <text x="56" y="80" font-family="'Inter', 'Helvetica Neue', sans-serif" font-weight="900" font-size="32" fill="url(#neon)" text-anchor="start">0</text>
+  </g>
+
+  <!-- The "Breathing Decimal": Serves as both the '.' in 4.0 and the AI's heartbeat -->
+  <circle cx="50" cy="78" r="2.5" fill="#ffffff" filter="url(#glow)">
+    <animate attributeName="opacity" values="0.1;1;0.1" dur="2.5s" repeatCount="indefinite" />
+    <animate attributeName="r" values="2;3.5;2" dur="2.5s" repeatCount="indefinite" />
+  </circle>
+</svg>
